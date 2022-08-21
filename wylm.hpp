@@ -36,7 +36,7 @@ struct	wylm{
 		uint8_t	ret;
 		do{
 			double	ran=wy2u01(wyrand(&global_seed))*sum,	sum1=0;	
-			for(size_t	i=0;	i<n;	i++){	sum1+=vs[i].p;	if(sum1>=ran){	ret=vs[i].i;	break;	}	}
+			for(size_t	i=0;	i<output;	i++){	sum1+=vs[i].p;	if(sum1>=ran){	ret=vs[i].i;	break;	}	}
 		}while(ret=='\n');
 		curr=(curr+1)%input;
 		return	ret;
