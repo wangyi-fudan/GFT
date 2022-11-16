@@ -32,7 +32,7 @@ struct	wylm{
 		for(size_t	i=0;	i<output;	i++){	vs[i].p=lf.out(0)[i];	vs[i].i=i;	if(vs[i].p>0)	ent0-=vs[i].p*logf(vs[i].p);	}
 		sort(vs,vs+output,Sort());
 		size_t	n=0;	double	sum=0,	plnp=0;
-		do{	sum+=vs[n].p;	plnp+=vs[n].p>0?vs[n].p*logf(vs[n].p):0;	n++;	}while(logf(sum)-plnp/sum<diversity*ent0);
+		do{	sum+=vs[n].p;	plnp+=vs[n].p>0?vs[n].p*logf(vs[n].p):0;	n++;	}while(n<output&&logf(sum)-plnp/sum<diversity*ent0);
 		uint8_t	ret;
 		do{
 			double	ran=wy2u01(wyrand(&global_seed))*sum,	sum1=0;	
